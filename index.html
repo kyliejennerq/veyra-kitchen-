@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Veyra Kitchen | Good Food, Good Company</title>
+
+<meta name="description" content="Enjoy authentic Nigerian meals, freshly prepared at Veyra Kitchen. Explore our menu and reserve your table.">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #292b22;
+    background: #f8f5ed;
+}
+
+header {
+    min-height: 85px;
+    padding: 20px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f8f5ed;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #294332;
+}
+
+.logo small {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 4px;
+    margin-top: 5px;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    color: #292b22;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+nav a:hover {
+    color: #a16c36;
+}
+
+.book-link {
+    background: #294332;
+    color: white;
+    padding: 13px 20px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+.hero {
+    min-height: 570px;
+    display: flex;
+    align-items: center;
+    padding: 70px 8%;
+    background:
+    linear-gradient(90deg, rgba(20,30,23,.85), rgba(20,30,23,.15)),
+    url('https://images.unsplash.com/photo-1547592180-85f173990554?w=1400&q=75')
+    center/cover;
+    color: white;
+}
+
+.hero-content {
+    max-width: 570px;
+}
+
+.eyebrow {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+    color: #e2bd82;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 70px);
+    line-height: 1.08;
+    font-weight: normal;
+    margin-bottom: 22px;
+}
+
+.hero p {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.9;
+    max-width: 440px;
+    color: #eee9df;
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    background: #c49a61;
+    color: #1f2d22;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background: #e0bd8d;
+}
+
+.intro {
+    padding: 85px 10%;
+    text-align: center;
+}
+
+.intro h2 {
+    font-size: 38px;
+    font-weight: normal;
+    color: #294332;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    max-width: 680px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    color: #68675e;
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+.menu-section {
+    padding: 75px 8%;
+    background: #eee9de;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading span {
+    color: #a47743;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.section-heading h2 {
+    font-size: 39px;
+    font-weight: normal;
+    color: #294332;
+    margin-top: 12px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.food-card {
+    background: #f8f5ed;
+}
+
+.food-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+}
+
+.food-details {
+    padding: 22px;
+}
+
+.food-details h3 {
+    font-size: 21px;
+    font-weight: normal;
+    margin-bottom: 9px;
+}
+
+.food-details p {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.7;
+    color: #77746c;
+}
+
+.price {
+    display: block;
+    margin-top: 15px;
+    color: #966b3c;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 55px;
+    padding: 90px 9%;
+}
+
+.about img {
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+}
+
+.about-text span {
+    font-family: Arial, sans-serif;
+    color: #a47743;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.about-text h2 {
+    font-size: 39px;
+    font-weight: normal;
+    color: #294332;
+    margin: 18px 0;
+}
+
+.about-text p {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 2;
+    color: #69675f;
+    margin-bottom: 25px;
+}
+
+.gallery {
+    padding: 75px 8%;
+    background: #eee9de;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.booking {
+    padding: 85px 8%;
+    background: #294332;
+    color: white;
+}
+
+.booking .section-heading h2 {
+    color: white;
+}
+
+.booking .section-heading p {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: #d9dfd8;
+    margin-top: 12px;
+}
+
+.booking-form {
+    max-width: 650px;
+    margin: auto;
+    padding: 35px;
+    background: #f8f5ed;
+    color: #292b22;
+}
+
+.booking-form label {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    margin: 15px 0 7px;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ded9cd;
+    background: white;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    outline: none;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+    border-color: #294332;
+}
+
+.booking-form button {
+    width: 100%;
+    border: none;
+    margin-top: 22px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.contact {
+    padding: 70px 8%;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 35px;
+    font-weight: normal;
+    color: #294332;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 2;
+    color: #68675e;
+}
+
+footer {
+    background: #1d2c21;
+    color: white;
+    padding: 35px 8%;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 2;
+}
+
+footer strong {
+    color: #d4ae79;
+}
+
+@media(max-width: 800px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 520px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-grid img {
+        height: 160px;
+    }
+
+    .hero {
+        min-height: 500px;
+    }
+
+    .booking-form {
+        padding: 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        VEYRA KITCHEN
+        <small>FOOD · CULTURE · HOSPITALITY</small>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">Our Story</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#booking" class="book-link">Reserve a Table</a>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <div class="eyebrow">A taste of home</div>
+
+        <h1>Good food.<br>Good company.</h1>
+
+        <p>
+            From the first spoon of jollof to the last taste
+            of your favourite soup, enjoy Nigerian cooking
+            made with care and served with warmth.
+        </p>
+
+        <a href="#menu" class="button">EXPLORE OUR MENU</a>
+    </div>
+</section>
+
+<section class="intro">
+    <h2>Welcome to Veyra Kitchen</h2>
+
+    <p>
+        We believe that good food brings people together.
+        Our kitchen celebrates the flavours, ingredients
+        and cooking traditions that make Nigerian food
+        special. Whether you're stopping by for lunch
+        or sharing a meal with family, there's always
+        something worth coming back for.
+    </p>
+</section>
+
+<section class="menu-section" id="menu">
+
+    <div class="section-heading">
+        <span>From our kitchen</span>
+        <h2>Something for Everyone</h2>
+    </div>
+
+    <div class="menu-grid">
+
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=650&q=70" alt="Rice dish">
+            <div class="food-details">
+                <h3>Special Jollof Rice</h3>
+                <p>Richly seasoned rice served with grilled chicken and plantain.</p>
+                <span class="price">₦4,500</span>
+            </div>
+        </div>
+
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=650&q=70" alt="Fried rice">
+            <div class="food-details">
+                <h3>Vegetable Fried Rice</h3>
+                <p>Fresh vegetables and perfectly seasoned rice.</p>
+                <span class="price">₦5,000</span>
+            </div>
+        </div>
+
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=650&q=70" alt="Traditional meal">
+            <div class="food-details">
+                <h3>Traditional Soup</h3>
+                <p>A comforting Nigerian soup prepared with local ingredients.</p>
+                <span class="price">₦5,500</span>
+            </div>
+        </div>
+
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=650&q=70" alt="Soup and meal">
+            <div class="food-details">
+                <h3>Egusi Soup</h3>
+                <p>Traditional egusi prepared with vegetables and assorted meat.</p>
+                <span class="price">₦5,500</span>
+            </div>
+        </div>
+
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=650&q=70" alt="Grilled food">
+            <div class="food-details">
+                <h3>Grilled Fish</h3>
+                <p>Well-seasoned fish grilled and served fresh.</p>
+                <span class="price">₦8,000</span>
+            </div>
+        </div>
+
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=650&q=70" alt="Grilled chicken">
+            <div class="food-details">
+                <h3>Grilled Chicken</h3>
+                <p>Juicy chicken seasoned with our house spices.</p>
+                <span class="price">₦6,000</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="about" id="about">
+
+    <img
+    src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=900&q=75"
+    alt="Restaurant dining experience">
+
+    <div class="about-text">
+        <span>OUR STORY</span>
+
+        <h2>More than just a meal.</h2>
+
+        <p>
+            At Veyra Kitchen, food is part of our story.
+            Inspired by Nigerian hospitality and the
+            richness of our local cuisine, we bring
+            familiar flavours to the table with care,
+            quality ingredients and attention to detail.
+        </p>
+
+        <p>
+            Every visit should feel welcoming.
+            Every meal should be worth remembering.
+        </p>
+
+        <a href="#booking" class="button">COME DINE WITH US</a>
+    </div>
+
+</section>
+
+<section class="gallery" id="gallery">
+
+    <div class="section-heading">
+        <span>A little look inside</span>
+        <h2>Our Gallery</h2>
+    </div>
+
+    <div class="gallery-grid">
+        <img src="https://images.unsplash.com/photo-1515003197210-e0cd7184f8f1?w=600&q=70" alt="Restaurant meal">
+        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=70" alt="Fresh food">
+        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=70" alt="Grilled meal">
+        <img src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?w=600&q=70" alt="Pasta dish">
+        <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=70" alt="Fresh meal">
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=70" alt="Freshly prepared food">
+    </div>
+
+</section>
+
+<section class="booking" id="booking">
+
+    <div class="section-heading">
+        <span>Save your seat</span>
+        <h2>Reserve a Table</h2>
+        <p>Planning a visit? We'd be happy to have you.</p>
+    </div>
+
+    <form class="booking-form" id="bookingForm">
+
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Your full name" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="Your phone number" required>
+
+        <label for="date">Reservation Date</label>
+        <input type="date" id="date" required>
+
+        <label for="time">Preferred Time</label>
+        <select id="time" required>
+            <option value="">Select a time</option>
+            <option>11:00 AM</option>
+            <option>12:00 PM</option>
+            <option>1:00 PM</option>
+            <option>2:00 PM</option>
+            <option>3:00 PM</option>
+            <option>5:00 PM</option>
+            <option>6:00 PM</option>
+            <option>7:00 PM</option>
+            <option>8:00 PM</option>
+        </select>
+
+        <label for="guests">Number of Guests</label>
+        <select id="guests" required>
+            <option value="">Select guests</option>
+            <option>1 Person</option>
+            <option>2 People</option>
+            <option>3 People</option>
+            <option>4 People</option>
+            <option>5 People</option>
+            <option>6 People</option>
+            <option>7+ People</option>
+        </select>
+
+        <label for="message">Additional Requests (Optional)</label>
+        <textarea id="message" rows="3" placeholder="Any special requests?"></textarea>
+
+        <button type="submit" class="button">
+            REQUEST A RESERVATION
+        </button>
+
+    </form>
+
+</section>
+
+<section class="contact" id="contact">
+    <h2>We'd Love to See You</h2>
+
+    <p>
+        Good food is always better shared.<br>
+        Come hungry. Leave happy.<br><br>
+        Opening Hours: Monday – Sunday<br>
+        10:00 AM – 9:00 PM
+    </p>
+</section>
+
+</main>
+
+<footer>
+    <strong>VEYRA KITCHEN</strong><br>
+    Good Food. Good Company.<br>
+    &copy; 2026 Veyra Kitchen. All Rights Reserved.<br><br>
+    Designed by Veyra Digital.
+</footer>
+
+<script>
+
+// Replace this with the restaurant's WhatsApp number.
+// Use country code 234 without the first zero.
+
+const restaurantNumber = "234XXXXXXXXXX";
+
+const dateInput = document.getElementById("date");
+
+const today = new Date();
+const localDate = new Date(
+    today.getTime() - today.getTimezoneOffset() * 60000
+).toISOString().split("T")[0];
+
+dateInput.min = localDate;
+
+document.getElementById("bookingForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    if (restaurantNumber === "234XXXXXXXXXX") {
+        alert("The restaurant WhatsApp number has not been configured yet.");
+        return;
+    }
+
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const date = document.getElementById("date").value;
+    const time = document.getElementById("time").value;
+    const guests = document.getElementById("guests").value;
+    const message = document.getElementById("message").value;
+
+    const bookingMessage =
+`Hello Veyra Kitchen!
+
+I would like to request a table reservation.
+
+Name: ${name}
+Phone: ${phone}
+Date: ${date}
+Time: ${time}
+Guests: ${guests}
+Additional requests: ${message}
+
+Please confirm my reservation.`;
+
+    const whatsappURL =
+    "https://wa.me/" + restaurantNumber +
+    "?text=" + encodeURIComponent(bookingMessage);
+
+    window.open(whatsappURL, "_blank");
+
+});
+
+</script>
+
+</body>
+  </html>
